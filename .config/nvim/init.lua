@@ -1,0 +1,2 @@
+require("roose")
+print("hello")
