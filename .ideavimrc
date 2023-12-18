@@ -1,0 +1,44 @@
+" let <leader> key be the space key
+let mapleader=" "
+
+nmap <C-d> 12<C-e>
+nmap <C-u> 12<C-y>
+
+set multiple-cursors
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text, e.g., ñ
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+nmap g<S-C-n> <Plug>AllOccurrences
+xmap g<S-C-n> <Plug>AllOccurrences
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=7
+
+" Do incremental searching.
+set incsearch
+set ic
+
+" Relative line numbers
+set relativenumber
+set number
+
+map <leader>d <Action>(Debug)
+map <leader>u <Action>(Run)
+map <leader><S-u> <Action>(RunClass)
+map <leader>s <Action>(Stop)
+
+map <leader>r <Action>(RenameElement)
+
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map <C-j> <Action>(GotoNextElementUnderCaretUsage)
+map <C-k> <Action>(GotoPrevElementUnderCaretUsage)

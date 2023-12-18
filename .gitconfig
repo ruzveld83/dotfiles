@@ -1,0 +1,18 @@
+[include]
+	path = ~/.gitconfig_local
+[user]
+	# see ~/.gitconfig_local
+[core]
+	excludesFile = ~/.gitignore
+[alias]
+        review = "!sh -c 'git checkout master && git fetch -p && git merge && git checkout $1 && git difftool --dir-diff master...$1' -"
+        umaster = "fetch origin master:master"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[diff]
+   tool = intellij
+[difftool "intellij"]
+   cmd = open -nWa 'IntelliJ IDEA 2022.2.app' --args diff $(realpath "$LOCAL") $(realpath "$REMOTE")
