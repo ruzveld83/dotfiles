@@ -35,4 +35,3 @@ unsetopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 
 export CLOUD_CLIENT_HOME=/Users/ruslan.izmailov/Projects/odkl-zeppelin
-export PATH="/usr/local/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$PATH"
