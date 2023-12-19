@@ -9,7 +9,7 @@ function jdk() {
         fi
 }
 
-jdk 17 silent
+#jdk 17 silent
 
 # usage: compress_videos "*.mp4"
 compress_videos() {
