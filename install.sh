@@ -32,10 +32,17 @@ backup_dotfiles() {
     fi
     for file in "${dotfiles[@]}"; do
         if [ -f "${HOME}/${file}" ] || [ -d "${HOME}/${file}" ]; then
-            if [ "${dry_run}" = false ]; then
-                mv "$HOME/$file" "$backup_dir"
+            if [ -h "${HOME}/${file}" ]; then
+                if [ "${dry_run}" = false ]; then
+                    rm -r "${HOME}/${file}"
+                fi
+                echo "Removed symlink ${HOME}/${file}"
+            else
+                if [ "${dry_run}" = false ]; then
+                    mv "$HOME/$file" "$backup_dir"
+                fi
+                echo "Moved ${HOME}/${file} to ${backup_dir}"
             fi
-            echo "Moved ${HOME}/${file} to ${backup_dir}" 
         fi
     done
 }
