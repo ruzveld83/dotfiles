@@ -20,7 +20,7 @@ backup_dir="$HOME/dotfiles-backup"
 
 install_oh_my_zsh() {
     echo "Going to install Oh My Zsh"
-    if [ "${dry_run}" = false ]; then
+    if [ "${dry_run}" = false ] && [ -z ${ZSH} ]; then
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
 }
@@ -51,7 +51,7 @@ create_symlinks() {
 }
 
 declare dry_run
-if [ -n "$1" ] && [ "$1" = "--dry-run" ]; then
+if [ "$#" -gt 0 ] && [ "${1}" = "--dry-run" ]; then
     dry_run=true
     echo "Dry run mode enabled. No commands will be executed"
 else
