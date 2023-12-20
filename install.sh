@@ -9,6 +9,7 @@ dotfiles=(
 ".profile"
 ".zprofile"
 ".config/nvim"
+".zshrc"
 )
 
 script_path=$(readlink -f "$0")
