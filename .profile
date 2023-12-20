@@ -9,7 +9,7 @@ function jdk() {
         fi
 }
 
-jdk 17 silent
+#jdk 17 silent
 
 # usage: compress_videos "*.mp4"
 compress_videos() {
@@ -22,3 +22,5 @@ compress_videos() {
 }
 
 export M2_HOME=/usr/local/Cellar/maven/3.8.2/libexec
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/usr/local/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$PATH"
