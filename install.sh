@@ -83,6 +83,17 @@ setup_iterm() {
     fi
 }
 
+install_java() {
+    echo "Going to install java"
+    if [ "${dry_run}" = false ]; then
+        brew tap homebrew/cask-versions
+        brew install zulu8 openjdk@11 openjdk@17 openjdk@21
+        sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+        sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+        sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+    fi
+}
+
 declare dry_run
 if [ "$#" -gt 0 ] && [ "${1}" = "--dry-run" ]; then
     dry_run=true
@@ -97,5 +108,6 @@ backup_dotfiles
 create_symlinks
 install_fonts
 setup_iterm
+install_java
 
 echo "Dotfiles installation complete!"
