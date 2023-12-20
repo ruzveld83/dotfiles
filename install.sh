@@ -94,6 +94,13 @@ install_java() {
     fi
 }
 
+install_misc() {
+    echo "Going to install misc apps"
+    if [ "${dry_run}" = false ]; then
+        brew install sublime-text rectangle scroll-reverser alfred nvim
+    fi
+}
+
 declare dry_run
 if [ "$#" -gt 0 ] && [ "${1}" = "--dry-run" ]; then
     dry_run=true
@@ -109,5 +116,6 @@ create_symlinks
 install_fonts
 setup_iterm
 install_java
+install_misc
 
 echo "Dotfiles installation complete!"
