@@ -65,6 +65,14 @@ create_symlinks() {
     done
 }
 
+install_fonts() {
+    echo "Going to install fonts"
+    if [ "${dry_run}" = false ]; then
+        brew tap homebrew/cask-fonts
+        brew install font-ubuntu-mono-nerd-font
+    fi
+}
+
 setup_iterm() {
     echo "Going to install and configure iterm"
     if [ "${dry_run}" = false ]; then
@@ -87,6 +95,7 @@ install_brew
 install_oh_my_zsh
 backup_dotfiles
 create_symlinks
+install_fonts
 setup_iterm
 
 echo "Dotfiles installation complete!"
