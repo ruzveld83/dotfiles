@@ -19,6 +19,13 @@ echo "Dotfiles repo path: ${dotfiles_repo}"
 # Directory to backup existing dotfiles
 backup_dir="$HOME/dotfiles-backup"
 
+install_brew() {
+    echo "Going to install brew"
+    if [ "${dry_run}" = false ] && [ ! -f "/opt/homebrew/bin/brew" ]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+}
+
 install_oh_my_zsh() {
     echo "Going to install Oh My Zsh"
     if [ "${dry_run}" = false ] && [ -z ${ZSH} ]; then
@@ -58,6 +65,16 @@ create_symlinks() {
     done
 }
 
+setup_iterm() {
+    echo "Going to install and configure iterm"
+    if [ "${dry_run}" = false ]; then
+        brew tap homebrew/cask-versions
+        brew install iterm2-beta
+        defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/dotfiles/iterm"
+        defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+    fi
+}
+
 declare dry_run
 if [ "$#" -gt 0 ] && [ "${1}" = "--dry-run" ]; then
     dry_run=true
@@ -66,8 +83,10 @@ else
     dry_run=false
 fi
 
+install_brew
 install_oh_my_zsh
 backup_dotfiles
 create_symlinks
+setup_iterm
 
 echo "Dotfiles installation complete!"
