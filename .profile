@@ -23,4 +23,4 @@ compress_videos() {
 
 export M2_HOME=/usr/local/Cellar/maven/3.8.2/libexec
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/usr/local/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$(brew --prefix ruby)/bin:$PATH"
