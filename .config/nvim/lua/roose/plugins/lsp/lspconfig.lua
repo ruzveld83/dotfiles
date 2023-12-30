@@ -65,5 +65,9 @@ return {
 				},
 			},
 		})
+
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+		})
 	end,
 }
