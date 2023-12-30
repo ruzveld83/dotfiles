@@ -15,4 +15,4 @@
 [diff]
    tool = intellij
 [difftool "intellij"]
-   cmd = open -nWa 'IntelliJ IDEA 2022.2.app' --args diff $(realpath "$LOCAL") $(realpath "$REMOTE")
+   cmd = open -nWa 'IntelliJ IDEA' --args diff $(realpath "$LOCAL") $(realpath "$REMOTE")
