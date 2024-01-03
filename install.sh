@@ -10,6 +10,8 @@ dotfiles=(
 ".zprofile"
 ".config/nvim"
 ".zshrc"
+".stylua.toml"
+".editorconfig"
 )
 
 script_path=$(readlink -f "$0")
