@@ -1,8 +1,11 @@
+" this command enables key repeating on key hold (need to move cursor faster):
+" `defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false`
+
 " let <leader> key be the space key
 let mapleader=" "
 
-nmap <C-d> 12<C-e>
-nmap <C-u> 12<C-y>
+nmap <C-d> 12j
+nmap <C-u> 12k
 
 set multiple-cursors
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
