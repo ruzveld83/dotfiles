@@ -12,10 +12,10 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
-            local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-            vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
+            vim.keymap.set("n", "<leader>ff", "<CMD>Telescope find_files<CR>", {})
+            vim.keymap.set("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", {})
+            vim.keymap.set("n", "<leader>fr", "<CMD>Telescope live_oldfiles<CR>", {})
+            vim.keymap.set("n", "<leader>km", "<CMD>Telescope keymaps<CR>", {})
             require("telescope").setup({
                 defaults = {
                     mappings = {

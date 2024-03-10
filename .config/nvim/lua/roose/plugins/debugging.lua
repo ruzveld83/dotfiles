@@ -2,7 +2,14 @@ return {
     {
         "mfussenegger/nvim-dap",
         config = function()
+            local dap = require("dap")
             vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle breakpoint" })
+            vim.keymap.set(
+                "n",
+                "<leader>dB",
+                function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+                { desc = "Set conditional breakpoint" }
+            )
             vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "Debug continue" })
             vim.keymap.set("n", "<F7>", "<cmd>DapStepInto<CR>", { desc = "Debug step into" })
             vim.keymap.set("n", "<F8>", "<cmd>DapStepOver<CR>", { desc = "Debug step over" })
@@ -36,5 +43,12 @@ return {
             dap.listeners.before.event_terminated.dapui_config = function() dapui.close() end
             dap.listeners.before.event_exited.dapui_config = function() dapui.close() end
         end,
+    },
+    {
+        "theHamsta/nvim-dap-virtual-text",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+        config = function() require("nvim-dap-virtual-text").setup() end,
     },
 }
