@@ -70,6 +70,7 @@ return {
 
         lspconfig["clangd"].setup({
             capabilities = capabilities,
+            cmd = { "/opt/homebrew/opt/llvm/bin/clangd" },
         })
     end,
 }
