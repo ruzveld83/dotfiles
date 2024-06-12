@@ -1,0 +1,21 @@
+! Put user rules line by line in this file.
+! See https://adblockplus.org/en/filter-cheatsheet
+
+! OpenAI GPT
+||chatgpt.com^
+||openai.com^
+||oaistatic.com^
+||oaiusercontent.com^
+
+! Instagram
+||instagram.com^
+||cdninstagram.com^
+
+! Google photos
+||ggpht.com^
+
+! Misc
+||medium.com^
+||quora.com^
+||quoracdn.net^
+||strava.com^
