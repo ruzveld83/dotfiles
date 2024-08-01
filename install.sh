@@ -91,9 +91,10 @@ install_java() {
     echo "Going to install java"
     if [ "${dry_run}" = false ]; then
         brew tap homebrew/cask-versions
-        brew install zulu8 openjdk@11 openjdk@17 openjdk@21
+        brew install zulu8 openjdk@11 openjdk@17 openjdk@21 openjdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+        sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
     fi
 }
