@@ -16,8 +16,9 @@ compress_videos() {
     local template="$1"
     
     for file in $(find . -maxdepth 1 -type f -name "$template"); do
-        local input=$(basename "$file")
-        ffmpeg -i "$input" -c:v libx264 -crf 33 -preset medium -c:a copy "c${input}"
+        local full_file_name=$(basename "$file")
+        local short_file_name=$(echo "$full_file_name" | cut -d. -f1)
+        ffmpeg -i "$full_file_name" -c:v libx264 -crf 33 -preset medium -c:a copy "${short_file_name}_c.mp4"
     done
 }
 
