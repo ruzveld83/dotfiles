@@ -102,7 +102,8 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install sublime-text rectangle scroll-reverser alfred nvim
+        brew install sublime-text rectangle scroll-reverser alfred nvim syncthing
+        brew services start syncthing
     fi
 }
 
