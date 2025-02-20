@@ -11,11 +11,42 @@
 ||instagram.com^
 ||cdninstagram.com^
 
-! Google photos
+! Google
+||youtube.com^
+||googlevideo.com^
 ||ggpht.com^
+||play.google.com^
+||youtu.be^
+||ytimg.com^
+
+! Twitter
+||twitter.com^
+||x.com^
+||twimg.com^
+||t.co^
+
+! IB
+||interactivebrokers.com^
+||interactivebrokers.co.uk^
+||ibkr.com^
 
 ! Misc
+||alltrails.com^
+||clevelandclinic.org^
+||getoutline.org^
+||graylog.org^
+||healthline.com^
+||jetbrains.com^
+||jetbrains.team^
+||linkedin.com^
+||medicalnewstoday.com^
 ||medium.com^
+||meduza.io^
+||notion.so^
+||paperpaper.ru^
 ||quora.com^
 ||quoracdn.net^
+||returnyoutubedislikeapi.com^
+||shadowsocks.org^
 ||strava.com^
+||thetrainline.com^
