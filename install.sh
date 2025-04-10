@@ -72,7 +72,6 @@ create_symlinks() {
 install_fonts() {
     echo "Going to install fonts"
     if [ "${dry_run}" = false ]; then
-        #brew tap homebrew/cask-fonts
         brew install font-ubuntu-mono-nerd-font
     fi
 }
