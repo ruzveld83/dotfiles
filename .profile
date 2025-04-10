@@ -1,3 +1,5 @@
+[ -f ~/.profile-local ] && source ~/.profile-local
+
 export LANG=en_US.UTF-8
 
 function jdk() {
@@ -9,7 +11,7 @@ function jdk() {
         fi
 }
 
-jdk 17 silent
+jdk 21 silent
 
 # usage: compress_videos "*.mp4"
 compress_videos() {

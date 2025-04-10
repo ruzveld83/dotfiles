@@ -1,5 +1,5 @@
 # Path to the oh-my-zsh installation.
-export ZSH="/Users/ruslan.izmailov/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -34,4 +34,3 @@ setopt HIST_EXPIRE_DUPS_FIRST
 unsetopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 
-export CLOUD_CLIENT_HOME=/Users/ruslan.izmailov/Projects/odkl-zeppelin
