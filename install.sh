@@ -62,7 +62,7 @@ backup_dotfiles() {
 create_symlinks() {
     echo "Going to create symlinks"
     for file in "${dotfiles[@]}"; do
-        if [ "${dry_run}" = false ]; then
+        if [ "${dry_run}" = false ] && [ ! -L ${HOME}/${file} ]; then
             ln -s "${dotfiles_repo}/${file}" "${HOME}/${file}"
         fi
         echo "symlinked ${HOME}/${file} to ${dotfiles_repo}/${file}"
@@ -72,7 +72,7 @@ create_symlinks() {
 install_fonts() {
     echo "Going to install fonts"
     if [ "${dry_run}" = false ]; then
-        brew tap homebrew/cask-fonts
+        #brew tap homebrew/cask-fonts
         brew install font-ubuntu-mono-nerd-font
     fi
 }
@@ -80,8 +80,7 @@ install_fonts() {
 setup_iterm() {
     echo "Going to install and configure iterm"
     if [ "${dry_run}" = false ]; then
-        brew tap homebrew/cask-versions
-        brew install iterm2-beta
+        brew install iterm2@beta
         defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/dotfiles/iterm"
         defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
     fi
@@ -90,8 +89,7 @@ setup_iterm() {
 install_java() {
     echo "Going to install java"
     if [ "${dry_run}" = false ]; then
-        brew tap homebrew/cask-versions
-        brew install zulu8 openjdk@11 openjdk@17 openjdk@21 openjdk
+        brew install zulu@8 openjdk@11 openjdk@17 openjdk@21 openjdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
@@ -102,7 +100,7 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install sublime-text rectangle scroll-reverser alfred nvim syncthing
+        brew install sublime-text rectangle scroll-reverser alfred nvim syncthing telnet
         brew services start syncthing
     fi
 }
