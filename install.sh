@@ -32,7 +32,7 @@ install_brew() {
 
 install_oh_my_zsh() {
     echo "Going to install Oh My Zsh"
-    if [ "${dry_run}" = false ] && [ -z ${ZSH} ]; then
+    if [[ "${dry_run}" = false ]] && [[ ! ${ZSH+x} ]]; then
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
 }
