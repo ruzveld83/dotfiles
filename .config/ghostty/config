@@ -1,0 +1,11 @@
+# this is for getting cmd+f functionality. Can move to stable releases starting with 1.3
+# auto-update-channel = tip
+
+theme = Catppuccin Frappe
+font-family = Monaco
+font-size = 16
+
+cursor-style = block
+shell-integration-features = no-cursor
+macos-titlebar-style = tabs
+window-colorspace = display-p3
