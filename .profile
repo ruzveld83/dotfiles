@@ -29,3 +29,8 @@ alias flush-dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 export M2_HOME=/usr/local/Cellar/maven/3.8.2/libexec
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$(brew --prefix ruby)/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/roose/.lmstudio/bin"
+# End of LM Studio CLI section
+
