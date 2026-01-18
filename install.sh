@@ -91,10 +91,11 @@ setup_iterm() {
 install_java() {
     echo "Going to install java"
     if [ "${dry_run}" = false ]; then
-        brew install zulu@8 openjdk@11 openjdk@17 openjdk@21 openjdk
+        brew install zulu@8 openjdk@11 openjdk@17 openjdk@21 openjdk@25 openjdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+        sudo ln -sfn /opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-25.jdk
         sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
     fi
 }
