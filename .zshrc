@@ -27,7 +27,7 @@
 # This is a zsh framework that is simpler and faster than oh-my-zsh
 
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-ZIM_CONFIG_FILE=${HOME}/.config/zsh/zimrc
+ZIM_CONFIG_FILE=${HOME}/.config/zim/.zimrc
 # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
     source $(brew --prefix)/opt/zimfw/share/zimfw.zsh init
