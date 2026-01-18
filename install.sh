@@ -11,6 +11,7 @@ dotfiles=(
 ".config/ghostty"
 ".config/nvim"
 ".config/bat"
+".config/linearmouse"
 ".zshrc"
 ".stylua.toml"
 ".editorconfig"
@@ -101,7 +102,7 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install ghostty sublime-text rectangle scroll-reverser alfred nvim syncthing telnet bat fzf fd tree
+        brew install ghostty sublime-text rectangle scroll-reverser alfred nvim syncthing telnet bat fzf fd tree lsd vivid linearmouse
         brew services start syncthing
     fi
 }
