@@ -34,3 +34,25 @@ setopt HIST_EXPIRE_DUPS_FIRST
 unsetopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 
+# ----- fzf -----
+
+source <(fzf --zsh)
+
+# use fd instead of find to search in fzf
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/roose/.lmstudio/bin"
+# End of LM Studio CLI section
+
