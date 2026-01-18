@@ -10,6 +10,7 @@ dotfiles=(
 ".zprofile"
 ".config/ghostty"
 ".config/nvim"
+".config/bat"
 ".zshrc"
 ".stylua.toml"
 ".editorconfig"
