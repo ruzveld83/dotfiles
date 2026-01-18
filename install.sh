@@ -12,6 +12,8 @@ dotfiles=(
 ".config/nvim"
 ".config/bat"
 ".config/linearmouse"
+".config/lsd"
+".config/zim"
 ".zshrc"
 ".stylua.toml"
 ".editorconfig"
