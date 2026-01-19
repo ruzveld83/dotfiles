@@ -13,7 +13,7 @@ zmodule environment
 # Applies correct bindkeys for input events.
 zmodule input
 # Sets a custom terminal title.
-zmodule termtitle
+#zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
 
@@ -33,6 +33,8 @@ zmodule archive
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 #zmodule asciiship
 
+zmodule joke/zim-starship
+
 #
 # Completion
 #
@@ -51,7 +53,7 @@ zmodule completion
 zmodule zsh-users/zsh-syntax-highlighting
 # Fish-like history search for Zsh, must be sourced after
 # zsh-users/zsh-syntax-highlighting.
-zmodule zsh-users/zsh-history-substring-search
+#zmodule zsh-users/zsh-history-substring-search
 # Fish-like autosuggestions for Zsh. Add the following to your ~/.zshrc to boost
 # performance: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 zmodule zsh-users/zsh-autosuggestions
