@@ -35,6 +35,16 @@ install_brew() {
     fi
 }
 
+# built-in zsh doesn't look at homebrew's apps autocompletions out-of-the-box
+install_homebrew_zsh() {
+    echo "Going to install zsh"
+    if [ "${dry_run}" = false ] && [ ! -f "$(brew --prefix)/bin/zsh" ]; then
+        brew install zsh
+        sudo sh -c "echo $(brew --prefix)/bin/zsh >> /etc/shells"
+        chsh -s $(brew --prefix)/bin/zsh
+    fi
+}
+
 install_oh_my_zsh() {
     echo "Going to install Oh My Zsh"
     if [[ "${dry_run}" = false ]] && [[ ! ${ZSH+x} ]]; then
@@ -119,6 +129,7 @@ else
 fi
 
 install_brew
+install_homebrew_zsh
 install_oh_my_zsh
 backup_dotfiles
 create_symlinks
