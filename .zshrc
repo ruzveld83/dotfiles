@@ -45,16 +45,19 @@ source ${ZIM_HOME}/init.zsh
 # see http://zsh.sourceforge.net/Guide/zshguide02.html
 # and https://linux.die.net/man/1/zshoptions
 
-HISTSIZE=50000
+HISTSIZE=70000 # more than SAVEHIST in order to enable HIST_EXPIRE_DUPS_FIRST effect
 SAVEHIST=50000
 HISTFILE=~/.zsh_history
 setopt HIST_VERIFY
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+unsetopt INC_APPEND_HISTORY
 unsetopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 unsetopt HIST_SAVE_NO_DUPS
-setopt HIST_FIND_NO_DUPS
+unsetopt HIST_FIND_NO_DUPS
 
 # ----- fzf -----
 
