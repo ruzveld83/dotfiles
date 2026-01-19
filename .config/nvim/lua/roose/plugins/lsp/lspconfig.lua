@@ -4,20 +4,19 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim", opts = {} }, -- this is for support of lua vim submodules like vim.keymap and others
+        { "folke/lazydev.nvim", ft = "lua", opts = {} }, -- replaces neodev.nvim for Neovim 0.10+
     },
     config = function()
-        require("neodev").setup({
-            library = { plugins = { "nvim-dap-ui" }, types = true },
-        })
-        local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local capabilities = cmp_nvim_lsp.default_capabilities()
+
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -50,9 +49,8 @@ return {
             end,
         })
 
-        local capabilities = cmp_nvim_lsp.default_capabilities()
-
-        lspconfig["lua_ls"].setup({
+        -- Configure LSP servers using the new vim.lsp.config API (Neovim 0.11+)
+        vim.lsp.config("lua_ls", {
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -68,9 +66,12 @@ return {
             },
         })
 
-        lspconfig["clangd"].setup({
+        vim.lsp.config("clangd", {
             capabilities = capabilities,
             cmd = { "/opt/homebrew/opt/llvm/bin/clangd" },
         })
+
+        -- Enable the configured servers
+        vim.lsp.enable({ "lua_ls", "clangd" })
     end,
 }
