@@ -132,3 +132,5 @@ return {
     - Validate Lua syntax.
     - Double-check the lazy spec syntax.
     - Ensure no hardcoded paths (use `vim.fn.stdpath('data')` etc. if needed).
+5. When you need to search docs, use `context7` tools.
+
