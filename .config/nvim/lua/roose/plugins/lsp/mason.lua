@@ -23,6 +23,7 @@ return {
                 "clangd",
                 "clang-format",
                 "codelldb",
+                "gopls",
             },
             auto_update = true,
         })
