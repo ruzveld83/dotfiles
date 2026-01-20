@@ -1,0 +1,4 @@
+alias cctl='~/.cloud/cctl'
+
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export KUBECONFIG="${HOME}/Library/Application Support/Lens/kubeconfigs/7cd36548-9e0b-4453-a8ed-8d74d865ec02-pasted-kubeconfig.yaml"
