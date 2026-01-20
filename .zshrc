@@ -87,8 +87,17 @@ alias lr='lrd 2'
 export LS_COLORS="$(vivid generate catppuccin-frappe)" # see https://github.com/sharkdp/vivid
 
 ## ghostty with shell-integrations enabled starts new tabs in cwd, this seems the like the only working solution to disable this while keeping the integrations enabled
-cd $HOME
+
+if [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]]; then
+  cd $HOME
+fi
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1 # they say it makes it faster
 WORDCHARS=${WORDCHARS/\//} # makes slash a word separator
+
+if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
+  export STARSHIP_CONFIG=~/.config/starship/idea.toml
+else
+  export STARSHIP_CONFIG=~/.config/starship/main.toml
+fi
