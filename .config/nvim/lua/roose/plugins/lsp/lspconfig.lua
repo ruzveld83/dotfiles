@@ -71,7 +71,11 @@ return {
             cmd = { "/opt/homebrew/opt/llvm/bin/clangd" },
         })
 
+        vim.lsp.config("gopls", {
+            capabilities = capabilities,
+        })
+
         -- Enable the configured servers
-        vim.lsp.enable({ "lua_ls", "clangd" })
+        vim.lsp.enable({ "lua_ls", "clangd", "gopls" })
     end,
 }
