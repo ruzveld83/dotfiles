@@ -115,7 +115,7 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install ghostty sublime-text rectangle scroll-reverser alfred nvim syncthing telnet bat fzf fd tree lsd vivid linearmouse
+        brew install ghostty sublime-text rectangle scroll-reverser alfred nvim syncthing telnet bat fzf fd tree zimfw lsd vivid starship linearmouse
         brew services start syncthing
     fi
 }
