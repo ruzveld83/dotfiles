@@ -1,4 +1,5 @@
 [ -f ~/.profile-local ] && source ~/.profile-local
+[ -f ~/.profile-specific ] && source ~/.profile-specific
 
 export LANG=en_US.UTF-8
 
