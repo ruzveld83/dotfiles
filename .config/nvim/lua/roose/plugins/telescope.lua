@@ -1,7 +1,6 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.4",
         dependencies = {
             "nvim-lua/plenary.nvim",
             {
@@ -23,6 +22,12 @@ return {
                             ["<C-j>"] = "move_selection_next",
                             ["<C-k>"] = "move_selection_previous",
                         },
+                    },
+                },
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                        file_ignore_patterns = { ".git/" },
                     },
                 },
             })
