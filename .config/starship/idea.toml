@@ -2,6 +2,8 @@
 
 continuation_prompt = "[.](bright-black) "
 
+add_newline = false
+
 format = """
 $username\
 $hostname\

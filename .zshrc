@@ -26,19 +26,21 @@
 #
 # This is a zsh framework that is simpler and faster than oh-my-zsh
 
-ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-ZIM_CONFIG_FILE=${HOME}/.config/zim/.zimrc
-# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
-    source $(brew --prefix)/opt/zimfw/share/zimfw.zsh init
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+  ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+  ZIM_CONFIG_FILE=${HOME}/.config/zim/.zimrc
+  # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+      source $(brew --prefix)/opt/zimfw/share/zimfw.zsh init
+  fi
+
+  # configure modules
+
+  zstyle ':zim:input' double-dot-expand yes # for making '...' into './..'
+
+  # Initialize modules.
+  source ${ZIM_HOME}/init.zsh
 fi
-
-# configure modules
-
-zstyle ':zim:input' double-dot-expand yes # for making '...' into './..'
-
-# Initialize modules.
-source ${ZIM_HOME}/init.zsh
 
 # ----- History -----
 #
@@ -87,7 +89,6 @@ alias lr='lrd 2'
 export LS_COLORS="$(vivid generate catppuccin-frappe)" # see https://github.com/sharkdp/vivid
 
 ## ghostty with shell-integrations enabled starts new tabs in cwd, this seems the like the only working solution to disable this while keeping the integrations enabled
-
 if [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]]; then
   cd $HOME
 fi
