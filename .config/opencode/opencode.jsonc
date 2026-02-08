@@ -2,10 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": {
     "gopls": {
-      "command": [ "gopls", "-rpc.trace", "--debug=:6060", "serve" ]
+      "command": ["gopls", "-rpc.trace", "--debug=:6060", "serve"]
     }
   },
-  "plugin": [ "opencode-gemini-auth@latest" ],
+  "plugin": ["opencode-gemini-auth@latest"],
   "provider": {
     "google": {
       "options": {
@@ -24,10 +24,10 @@
           "name": "qwen2.5-coder-7b-instruct"
         },
         "deepseek/deepseek-r1-0528-qwen3-8b": {
-            "name": "deepseek-r1-0528-qwen3-8b"
+          "name": "deepseek-r1-0528-qwen3-8b"
         },
         "openai/gpt-oss-20b": {
-            "name": "gpt-oss-20b"
+          "name": "gpt-oss-20b"
         }
       }
     },

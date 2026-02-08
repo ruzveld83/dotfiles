@@ -8,6 +8,14 @@ return {
             formatters_by_ft = {
                 c = { "clang-format" },
                 lua = { "stylua" },
+                json = { "prettier_json" },
+                jsonc = { "prettier_json" },
+            },
+            formatters = {
+                prettier_json = {
+                    command = "prettier",
+                    args = { "--tab-width", "2", "--trailing-comma", "none", "--stdin-filepath", "$FILENAME" },
+                },
             },
         })
 
