@@ -75,7 +75,16 @@ return {
             capabilities = capabilities,
         })
 
+        vim.lsp.config("jsonls", {
+            capabilities = capabilities,
+            settings = {
+                json = {
+                    validate = { enable = true },
+                },
+            },
+        })
+
         -- Enable the configured servers
-        vim.lsp.enable({ "lua_ls", "clangd", "gopls" })
+        vim.lsp.enable({ "lua_ls", "clangd", "gopls", "jsonls" })
     end,
 }

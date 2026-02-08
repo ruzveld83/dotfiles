@@ -14,14 +14,14 @@ return {
             formatters = {
                 prettier_json = {
                     command = "prettier",
-                    args = { "--tab-width", "2", "--trailing-comma", "none", "--stdin-filepath", "$FILENAME" },
+                    args = { "--trailing-comma", "none", "--stdin-filepath", "$FILENAME" },
                 },
             },
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>ii", function()
             conform.format({
-                lsp_fallback = true,
+                lsp_format = "fallback",
                 async = false,
                 timeout_ms = 1000,
             })

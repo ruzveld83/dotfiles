@@ -24,6 +24,7 @@ return {
                 "clang-format",
                 "codelldb",
                 "gopls",
+                "json-lsp",
                 "prettier",
             },
             auto_update = true,
