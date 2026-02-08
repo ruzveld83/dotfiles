@@ -24,6 +24,7 @@ return {
                 "clang-format",
                 "codelldb",
                 "gopls",
+                "prettier",
             },
             auto_update = true,
         })
