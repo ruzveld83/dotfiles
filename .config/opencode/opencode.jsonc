@@ -31,22 +31,6 @@
         }
       }
     },
-    "llama.cpp-tablet": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "llama.cpp tablet",
-      "options": {
-        "baseURL": "http://192.168.1.224:8080/v1"
-      },
-      "models": {
-        "llama-current": {
-          "name": "llama-current",
-          "limit": {
-            "context": 32768,
-            "output": 8192
-          }
-        }
-      }
-    },
     "ollama-tablet": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "ollama tablet",
@@ -54,20 +38,6 @@
         "baseURL": "http://192.168.1.224:11434/v1"
       },
       "models": {
-        "qwen1.5": {
-          "name": "qwen1.5",
-          "limit": {
-            "context": 32768,
-            "output": 8192
-          }
-        },
-        "Llama3": {
-          "name": "Llama3",
-          "limit": {
-            "context": 24000,
-            "output": 8192
-          }
-        },
         "qwen3": {
           "name": "qwen3",
           "limit": {
