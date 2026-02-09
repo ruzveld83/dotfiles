@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1",
   "schemes" : [
     {
       "if" : {
@@ -32,7 +32,7 @@
           "vertical" : false
         },
         "speed" : {
-          "vertical" : 40.41
+          "vertical" : 56.04
         }
       }
     },
