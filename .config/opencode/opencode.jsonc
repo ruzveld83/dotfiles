@@ -7,11 +7,6 @@
   },
   "plugin": ["opencode-gemini-auth@latest"],
   "provider": {
-    "google": {
-      "options": {
-        "projectId": "gen-lang-client-0672826450"
-      }
-    },
     "lm-studio-local": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "LM Studio local",
