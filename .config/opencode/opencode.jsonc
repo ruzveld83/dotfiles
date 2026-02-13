@@ -6,6 +6,13 @@
     }
   },
   "plugin": ["opencode-gemini-auth@latest"],
+  "permission": {
+    "*": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "read": "allow",
+    "todowrite": "allow"
+  },
   "provider": {
     "lm-studio-local": {
       "npm": "@ai-sdk/openai-compatible",

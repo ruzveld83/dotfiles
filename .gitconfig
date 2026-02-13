@@ -4,6 +4,7 @@
 	# see ~/.gitconfig_local
 [core]
 	excludesFile = ~/.gitignore
+	autocrlf = input
 [alias]
         review = "!sh -c 'git checkout master && git fetch -p && git merge && git checkout $1 && git merge && git difftool --dir-diff master...$1' -"
         umaster = "fetch origin master:master"
