@@ -14,6 +14,8 @@ dotfiles=(
 ".config/linearmouse"
 ".config/lsd"
 ".config/zim"
+".config/starship"
+".config/opencode"
 ".zshrc"
 ".stylua.toml"
 ".editorconfig"
@@ -45,13 +47,6 @@ install_homebrew_zsh() {
     fi
 }
 
-install_oh_my_zsh() {
-    echo "Going to install Oh My Zsh"
-    if [[ "${dry_run}" = false ]] && [[ ! ${ZSH+x} ]]; then
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    fi
-}
-
 backup_dotfiles() {
     echo "Going to backup dotfiles"
     if [ "${dry_run}" = false ]; then
@@ -78,6 +73,7 @@ create_symlinks() {
     echo "Going to create symlinks"
     for file in "${dotfiles[@]}"; do
         if [ "${dry_run}" = false ] && [ ! -L ${HOME}/${file} ]; then
+            mkdir -p "$(dirname "${HOME}/${file}")"
             ln -s "${dotfiles_repo}/${file}" "${HOME}/${file}"
         fi
         echo "symlinked ${HOME}/${file} to ${dotfiles_repo}/${file}"
@@ -115,7 +111,7 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install ghostty sublime-text rectangle alfred nvim syncthing telnet bat fzf fd tree zimfw lsd vivid starship linearmouse lua luarocks wget go node
+        brew install ghostty sublime-text rectangle alfred nvim syncthing telnet bat ripgrep fzf fd tree zimfw lsd vivid starship linearmouse lua luarocks wget go node tree-sitter-cli
         brew services start syncthing
     fi
 }
@@ -130,7 +126,6 @@ fi
 
 install_brew
 install_homebrew_zsh
-install_oh_my_zsh
 backup_dotfiles
 create_symlinks
 install_fonts
