@@ -8,6 +8,7 @@ cursor-style = block
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo
 macos-titlebar-style = tabs
 window-colorspace = display-p3
+macos-option-as-alt = true
 
 # these don't seem to work. workaround done in .zshrc
 # window-inherit-working-directory = false
