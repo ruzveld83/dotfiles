@@ -32,7 +32,7 @@ tmux send-keys -t "$SESSION_NAME:control" "tail -f logs/indexer.log" C-m
 
 # Split vertically, full width, to create bottom row (Pane 3)
 tmux split-window -v -f -t "$SESSION_NAME:control" -c "$PROJECT_DIR"
-tmux send-keys -t "$SESSION_NAME:control" "make grpcui" C-m
+tmux send-keys -t "$SESSION_NAME:control" "make grpcui"
 
 # Window 3: shell
 tmux new-window -t "$SESSION_NAME" -c "$PROJECT_DIR" -n "shell"
