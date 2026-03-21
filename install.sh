@@ -16,6 +16,7 @@ dotfiles=(
 ".config/zim"
 ".config/starship"
 ".config/opencode"
+".config/tmux"
 ".zshrc"
 ".stylua.toml"
 ".editorconfig"
@@ -111,7 +112,7 @@ install_java() {
 install_misc() {
     echo "Going to install misc apps"
     if [ "${dry_run}" = false ]; then
-        brew install ghostty sublime-text rectangle alfred nvim syncthing telnet bat ripgrep fzf fd tree zimfw lsd vivid starship linearmouse lua luarocks wget go node tree-sitter-cli
+        brew install ghostty sublime-text rectangle alfred nvim syncthing telnet bat ripgrep fzf fd tree zimfw lsd vivid starship linearmouse lua luarocks wget go node tree-sitter-cli tmux
         brew services start syncthing
     fi
 }

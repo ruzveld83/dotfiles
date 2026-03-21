@@ -89,7 +89,7 @@ alias lr='lrd 2'
 export LS_COLORS="$(vivid generate catppuccin-frappe)" # see https://github.com/sharkdp/vivid
 
 ## ghostty with shell-integrations enabled starts new tabs in cwd, this seems the like the only working solution to disable this while keeping the integrations enabled
-if [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]]; then
+if [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" && -z "$TMUX" ]]; then
   cd $HOME
 fi
 
@@ -102,3 +102,8 @@ if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/roose/.lmstudio/bin"
+# End of LM Studio CLI section
+
