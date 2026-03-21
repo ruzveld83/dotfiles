@@ -34,3 +34,4 @@ export PATH="/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/ant@1.9/bin:/usr/local
 export PATH="$PATH:/Users/roose/.lmstudio/bin"
 
 alias tmux-01-doc-rag="~/.config/tmux/sessions/01-doc-rag.sh"
+alias tmux-dotfiles="~/.config/tmux/sessions/dotfiles.sh"
