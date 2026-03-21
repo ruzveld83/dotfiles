@@ -1,4 +1,3 @@
-# this is for getting cmd+f functionality. Can move to stable releases starting with 1.3
 auto-update-channel = stable
 
 theme = Catppuccin Frappe
