@@ -5,7 +5,7 @@
       "command": ["gopls", "-rpc.trace", "--debug=:6060", "serve"]
     }
   },
-  "plugin": ["opencode-gemini-auth@latest"],
+  "plugin": ["opencode-gemini-auth@latest", "opencode-claude-auth@latest"],
   "permission": {
     "*": "ask",
     "glob": "allow",
