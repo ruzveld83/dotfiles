@@ -25,6 +25,6 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/ant@1.9/bin:/usr/local/sbin:$(brew --prefix python)/libexec/bin:$(brew --prefix ruby)/bin:$PATH"
 export PATH="$PATH:/Users/roose/.lmstudio/bin"
 
-alias tmux-01-doc-rag="~/.config/tmux/sessions/01-doc-rag.sh"
+alias tmux-snoop-doc="~/.config/tmux/sessions/snoop-doc.sh"
 alias tmux-dotfiles="~/.config/tmux/sessions/dotfiles.sh"
 alias tmux-project="~/.config/tmux/sessions/project.sh"
