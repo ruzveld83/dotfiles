@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-SESSION_NAME="01-doc-rag"
-PROJECT_DIR="$HOME/Projects/01-doc-rag"
+SESSION_NAME="snoop-doc"
+PROJECT_DIR="$HOME/Projects/snoop-doc"
 
 # Check if session exists
 tmux has-session -t "$SESSION_NAME" 2>/dev/null
@@ -28,11 +28,11 @@ tmux send-keys -t "$SESSION_NAME:control" "make docker" C-m
 
 # Split horizontally to create top right pane (Pane 2)
 tmux split-window -h -t "$SESSION_NAME:control" -c "$PROJECT_DIR"
-tmux send-keys -t "$SESSION_NAME:control" "tail -f logs/indexer.log" C-m
+tmux send-keys -t "$SESSION_NAME:control" "tail -f logs/*" C-m
 
 # Split vertically, full width, to create bottom row (Pane 3)
 tmux split-window -v -f -t "$SESSION_NAME:control" -c "$PROJECT_DIR"
-tmux send-keys -t "$SESSION_NAME:control" "make grpcui"
+tmux send-keys -t "$SESSION_NAME:control" "make grpcui-api"
 
 # Window 3: shell
 tmux new-window -t "$SESSION_NAME" -c "$PROJECT_DIR" -n "shell"
