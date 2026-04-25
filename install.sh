@@ -21,7 +21,6 @@ dotfiles=(
 ".stylua.toml"
 ".editorconfig"
 ".Shadowsocks-NG/user-rule.txt"
-"scripts/lightsail-stats.sh"
 )
 
 script_path=$(readlink -f "$0")
