@@ -6,7 +6,7 @@ dotfiles=(
 ".gitconfig"
 ".gitignore"
 ".ideavimrc"
-".profile"
+".profile.common"
 ".zprofile"
 ".config/ghostty"
 ".config/nvim"
@@ -79,6 +79,12 @@ create_symlinks() {
         fi
         echo "symlinked ${HOME}/${file} to ${dotfiles_repo}/${file}"
     done
+
+    # .profile is not in the array — it's an alias pointing to the platform variant
+    if [ "${dry_run}" = false ] && [ ! -L "${HOME}/.profile" ]; then
+        ln -s "${dotfiles_repo}/.profile.mac" "${HOME}/.profile"
+    fi
+    echo "symlinked ${HOME}/.profile to ${dotfiles_repo}/.profile.mac"
 }
 
 install_fonts() {
