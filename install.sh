@@ -21,6 +21,7 @@ dotfiles=(
 ".stylua.toml"
 ".editorconfig"
 ".Shadowsocks-NG/user-rule.txt"
+".npmrc"
 )
 
 script_path=$(readlink -f "$0")
