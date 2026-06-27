@@ -1,3 +1,7 @@
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
 # ----- oh-my-zsh config -----
 
 # # Path to the oh-my-zsh installation.
@@ -92,6 +96,9 @@ _fzf_compgen_dir() {
 
 alias lrd='l --tree --depth'
 alias lr='lrd 2'
+alias vim=nvim
+alias npm="socket npm"
+alias npx="socket npx"
 
 # ----- Misc -----
 
@@ -111,4 +118,3 @@ if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
 fi
-

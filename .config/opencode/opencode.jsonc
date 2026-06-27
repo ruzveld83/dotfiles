@@ -61,6 +61,10 @@
       "headers": {
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
+    },
+    "snoop-doc": {
+      "type": "remote",
+      "url": "http://localhost:8082"
     }
   }
 }
