@@ -6,6 +6,14 @@ Dotfiles repo synced across macOS systems. No build, no test suite — changes a
 
 Files live here in their final on-disk layout (e.g. `.config/nvim/`, `.zshrc`). `install.sh` symlinks each entry of its `dotfiles=()` array from `$HOME` back into this repo. So editing a file under this repo is the same as editing the live config on the machine running `install.sh`.
 
+This matters for any request to change tooling config: the live files in `$HOME` (`~/.config/nvim`, `~/.config/opencode`, `~/.zshrc`, …) are symlinks pointing here, so the source of truth is this repo — edit the file here, not a copy under `$HOME`. Directory entries are linked as **whole directories**, so everything inside them is live too.
+
+Managed symlinks (`$HOME/<path> → repo/<path>`, from `install.sh`):
+
+- Files: `.gitconfig`, `.gitignore`, `.ideavimrc`, `.profile.common`, `.zprofile`, `.zshrc`, `.stylua.toml`, `.editorconfig`, `.npmrc`, `.Shadowsocks-NG/user-rule.txt`
+- Directories: `.config/ghostty`, `.config/nvim`, `.config/bat`, `.config/linearmouse`, `.config/lsd`, `.config/zim`, `.config/starship`, `.config/opencode`, `.config/tmux`
+- Special case: `~/.profile` is **not** in the array — `install.sh` links it separately to `.profile.mac`.
+
 ## install.sh — read before changing anything top-level
 
 - The `dotfiles=()` array at the top of `install.sh` is the **only** registry of managed paths. New dotfile? Add it there or it will not be symlinked on a fresh machine.

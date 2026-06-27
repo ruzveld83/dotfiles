@@ -7,7 +7,8 @@
   },
   "plugin": [
     "opencode-gemini-auth@1.4.10",
-    "@ex-machina/opencode-anthropic-auth@1.7.5"
+    "@ex-machina/opencode-anthropic-auth@1.7.5",
+    "@dietrichgebert/ponytail@4.8.3"
     // "opencode-claude-auth@latest"
   ],
   "permission": {
