@@ -1,8 +1,8 @@
 auto-update-channel = stable
 
 theme = Catppuccin Frappe
-font-family = Monaco
-font-size = 16
+#font-family = Monaco
+#font-size = 16
 
 cursor-style = block
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo

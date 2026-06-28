@@ -68,7 +68,6 @@ return {
 
         vim.lsp.config("clangd", {
             capabilities = capabilities,
-            cmd = { "/opt/homebrew/opt/llvm/bin/clangd" },
         })
 
         vim.lsp.config("gopls", {

@@ -1,0 +1,14 @@
+[ -f ~/.profile-local ] && source ~/.profile-local
+[ -f ~/.profile-specific ] && source ~/.profile-specific
+
+export LANG=en_US.UTF-8
+
+# usage: compress_videos "*.mp4"
+alias compress_videos='~/scripts/compress_videos.sh'
+
+export PATH="$(go env GOPATH)/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
+
+alias tmux-snoop-doc="~/.config/tmux/sessions/snoop-doc.sh"
+alias tmux-dotfiles="~/.config/tmux/sessions/dotfiles.sh"
+alias tmux-project="~/.config/tmux/sessions/project.sh"

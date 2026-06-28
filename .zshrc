@@ -1,3 +1,7 @@
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
 # ----- oh-my-zsh config -----
 
 # # Path to the oh-my-zsh installation.
@@ -29,9 +33,18 @@
 if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
   ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
   ZIM_CONFIG_FILE=${HOME}/.config/zim/.zimrc
+  if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+    if (( ${+commands[curl]} )); then
+      curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+          https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    else
+      mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+          https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    fi
+  fi
   # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
   if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
-      source $(brew --prefix)/opt/zimfw/share/zimfw.zsh init
+      source ${ZIM_HOME}/zimfw.zsh init
   fi
 
   # configure modules
@@ -83,6 +96,9 @@ _fzf_compgen_dir() {
 
 alias lrd='l --tree --depth'
 alias lr='lrd 2'
+alias vim=nvim
+alias npm="socket npm"
+alias npx="socket npx"
 
 # ----- Misc -----
 
@@ -102,8 +118,3 @@ if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
 else
   export STARSHIP_CONFIG=~/.config/starship/main.toml
 fi
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/roose/.lmstudio/bin"
-# End of LM Studio CLI section
-
