@@ -14,8 +14,10 @@
     "*": "ask",
     "glob": "allow",
     "grep": "allow",
+    "rg": "allow",
     "read": "allow",
-    "todowrite": "allow"
+    "todowrite": "allow",
+    "ls": "allow"
   },
   "provider": {
     "lm-studio-local": {
