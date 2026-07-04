@@ -1,5 +1,7 @@
 # AGENTS.md
 
+**RULE #1 — edit configs HERE, never under `$HOME`.** Nearly every config on this machine (`~/.config/tmux`, `~/.config/nvim`, `~/.zshrc`, …) is a symlink into this repo. When asked to change any tool's configuration, do NOT go looking in the home directory — find and edit the corresponding file in this repo (e.g. "edit tmux config" → `.config/tmux/` here). The full symlink list is in "What this repo is" below.
+
 Dotfiles repo synced across macOS systems. No build, no test suite — changes are verified by sourcing the relevant config or restarting the affected app.
 
 ## What this repo is
