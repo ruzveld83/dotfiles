@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.11.2",
   "schemes" : [
     {
       "if" : {
@@ -12,11 +12,12 @@
         }
       },
       "pointer" : {
-        "acceleration" : 0.6921
+        "acceleration" : 0.6921,
+        "disableAcceleration" : false
       },
       "scrolling" : {
         "acceleration" : {
-          "vertical" : 0.6
+          "vertical" : 0.29
         },
         "distance" : {
           "vertical" : "auto"
@@ -32,7 +33,7 @@
           "vertical" : false
         },
         "speed" : {
-          "vertical" : 56.04
+          "vertical" : 19.8
         }
       }
     },
