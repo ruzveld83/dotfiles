@@ -5,13 +5,20 @@
       "command": ["gopls", "-rpc.trace", "--debug=:6060", "serve"]
     }
   },
-  "plugin": ["opencode-gemini-auth@latest", "opencode-claude-auth@latest"],
+  "plugin": [
+    "opencode-gemini-auth@1.4.10",
+    "@ex-machina/opencode-anthropic-auth@1.7.5",
+    "@dietrichgebert/ponytail@4.8.3"
+    // "opencode-claude-auth@latest"
+  ],
   "permission": {
     "*": "ask",
     "glob": "allow",
     "grep": "allow",
+    "rg": "allow",
     "read": "allow",
-    "todowrite": "allow"
+    "todowrite": "allow",
+    "ls": "allow"
   },
   "provider": {
     "lm-studio-local": {
@@ -57,6 +64,14 @@
       "headers": {
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
+    },
+    "snoop-doc": {
+      "type": "remote",
+      "url": "http://localhost:8082"
+    },
+    "jetbrains": {
+      "type": "remote",
+      "url": "http://127.0.0.1:64342/sse",
     }
   }
 }

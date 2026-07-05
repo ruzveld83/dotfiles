@@ -24,7 +24,7 @@ Plugins are organized as individual files returning lazy.nvim spec tables. The `
 
 Configured LSP servers (via mason):
 - `lua_ls` - Lua (with neodev for Neovim API support)
-- `clangd` - C/C++ (uses Homebrew LLVM at `/opt/homebrew/opt/llvm/bin/clangd`)
+- `clangd` - C/C++
 
 Formatters (via conform.nvim):
 - `stylua` - Lua
