@@ -18,7 +18,12 @@
     "rg": "allow",
     "read": "allow",
     "todowrite": "allow",
-    "ls": "allow"
+    "ls": "allow",
+    "head": "allow",
+    "context7*": "allow",
+    "snoop-doc*": "allow",
+    "jetbrains_read*": "allow",
+    "jetbrains_search*": "allow"
   },
   "provider": {
     "lm-studio-local": {
