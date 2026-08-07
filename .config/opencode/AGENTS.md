@@ -10,4 +10,4 @@ When writing the prompt for the Explore subagent, you MUST explicitly include th
 
 # Code reading and searching rules
 
-For reading and searching code try 'jetbrains' MCP first. Especially if you need to read library code that is not in current repo (fall back to unpacking jars only if jetbrains doesn't do what you want). 
+For reading and searching code try 'jetbrains' MCP first. Especially if you need to read library code that is not in current repo (fall back to unpacking jars only if jetbrains doesn't do what you want). Don't forget to specify the project path via `projectPath` when using 'jetbrains'.
