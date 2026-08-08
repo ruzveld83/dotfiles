@@ -1,0 +1,3 @@
+# macOS font-size override. Enable with:
+#   ln -sf ~/.config/ghostty/config.macos ~/.ghostty-config
+font-size = 16
