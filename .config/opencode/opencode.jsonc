@@ -8,7 +8,8 @@
   "plugin": [
     "opencode-gemini-auth@1.4.10",
     "@ex-machina/opencode-anthropic-auth@1.7.5",
-    "@dietrichgebert/ponytail@4.8.3"
+    "@dietrichgebert/ponytail@4.8.3",
+    "@mohak34/opencode-notifier@v0.2.8"
     // "opencode-claude-auth@latest"
   ],
   "permission": {
@@ -37,6 +38,9 @@
         },
         "openai/gpt-oss-20b": {
           "name": "gpt-oss-20b"
+        },
+        "openai/gpt-oss-120b": {
+          "name": "gpt-oss-120b"
         }
       }
     },
