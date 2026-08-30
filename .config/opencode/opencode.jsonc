@@ -76,11 +76,15 @@
     },
     "snoop-doc": {
       "type": "remote",
-      "url": "http://localhost:8082"
+      "url": "{env:SNOOP_DOC_MCP_URL}"
     },
     "jetbrains": {
       "type": "remote",
       "url": "http://127.0.0.1:64342/sse",
+    },
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp"
     }
   }
 }

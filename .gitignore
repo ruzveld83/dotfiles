@@ -2,3 +2,5 @@
 /_local/
 *~
 CLAUDE.local.md
+
+**/.claude/settings.local.json
