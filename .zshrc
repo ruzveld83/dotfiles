@@ -99,6 +99,7 @@ alias lr='lrd 2'
 alias vim=nvim
 alias npm="socket npm"
 alias npx="socket npx"
+alias codex="codex --profile personal"
 
 # ----- Misc -----
 
