@@ -27,9 +27,9 @@ if [ $? -eq 0 ]; then
 fi
 
 # Create a new detached session, starting in PROJECT_DIR
-# Window 1: run opencode
+# Window 1: run codex
 tmux new-session -d -s "$SESSION_NAME" -c "$PROJECT_DIR" -n "ai"
-tmux send-keys -t "$SESSION_NAME:ai" "opencode" C-m
+tmux send-keys -t "$SESSION_NAME:ai" "codex" C-m
 
 # Window 2: shell
 tmux new-window -t "$SESSION_NAME" -c "$PROJECT_DIR" -n "shell"
