@@ -99,7 +99,6 @@ alias lr='lrd 2'
 alias vim=nvim
 alias npm="socket npm"
 alias npx="socket npx"
-alias codex="codex --config tui.animations=false"
 
 # ----- Misc -----
 
