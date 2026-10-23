@@ -18,7 +18,7 @@
     { "action": "shell", "resource": "wc *", "effect": "allow" },
     { "action": "shell", "resource": "cat *", "effect": "allow" },
     { "action": "context7_*", "resource": "*", "effect": "allow" },
-    { "action": "snoop_doc_*", "resource": "*", "effect": "allow" },
+    { "action": "snoop-doc_*", "resource": "*", "effect": "allow" },
     { "action": "jetbrains_read*", "resource": "*", "effect": "allow" },
     { "action": "jetbrains_search*", "resource": "*", "effect": "allow" }
   ],
@@ -27,8 +27,9 @@
       "context7": {
         "type": "remote",
         "url": "https://mcp.context7.com/mcp",
+        "oauth": false,
         "headers": {
-          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+          "Authorization": "Bearer {env:CONTEXT7_API_KEY}"
         }
       },
       "snoop-doc": {
@@ -41,7 +42,7 @@
       },
       "atlassian": {
         "type": "remote",
-        "url": "https://mcp.atlassian.com/v1/mcp"
+        "url": "https://mcp.atlassian.com/v2/mcp"
       }
     }
   }
