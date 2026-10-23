@@ -1,10 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "lsp": {
-    "gopls": {
-      "command": ["gopls", "-rpc.trace", "--debug=:6060", "serve"]
-    }
-  },
   "plugins": [
     "@ex-machina/opencode-anthropic-auth@2.0.0-next.6",
     "@dietrichgebert/ponytail@5.3.2"
@@ -27,65 +22,27 @@
     { "action": "jetbrains_read*", "resource": "*", "effect": "allow" },
     { "action": "jetbrains_search*", "resource": "*", "effect": "allow" }
   ],
-  "provider": {
-    "lm-studio-local": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "LM Studio local",
-      "options": {
-        "baseURL": "http://localhost:1234/v1",
-        "apiKey": "lm-studio"
-      },
-      "models": {
-        "qwen2.5-coder-7b-instruct": {
-          "name": "qwen2.5-coder-7b-instruct"
-        },
-        "deepseek/deepseek-r1-0528-qwen3-8b": {
-          "name": "deepseek-r1-0528-qwen3-8b"
-        },
-        "openai/gpt-oss-20b": {
-          "name": "gpt-oss-20b"
-        },
-        "openai/gpt-oss-120b": {
-          "name": "gpt-oss-120b"
-        }
-      }
-    },
-    "ollama-tablet": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "ollama tablet",
-      "options": {
-        "baseURL": "http://192.168.1.224:11434/v1"
-      },
-      "models": {
-        "qwen3": {
-          "name": "qwen3",
-          "limit": {
-            "context": 32768,
-            "output": 8192
-          }
-        }
-      }
-    }
-  },
   "mcp": {
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        }
+      },
+      "snoop-doc": {
+        "type": "remote",
+        "url": "{env:SNOOP_DOC_MCP_URL}"
+      },
+      "jetbrains": {
+        "type": "remote",
+        "url": "http://127.0.0.1:64342/sse"
+      },
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v1/mcp"
       }
-    },
-    "snoop-doc": {
-      "type": "remote",
-      "url": "{env:SNOOP_DOC_MCP_URL}"
-    },
-    "jetbrains": {
-      "type": "remote",
-      "url": "http://127.0.0.1:64342/sse",
-    },
-    "atlassian": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp"
     }
   }
 }
