@@ -6,3 +6,5 @@ CLAUDE.local.md
 **/.claude/settings.local.json
 
 **/.claude/.cc-writes/
+
+/.config/opencode/service.json

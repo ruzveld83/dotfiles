@@ -5,31 +5,28 @@
       "command": ["gopls", "-rpc.trace", "--debug=:6060", "serve"]
     }
   },
-  "plugin": [
-    "opencode-gemini-auth@1.4.10",
-    "@ex-machina/opencode-anthropic-auth@1.7.5",
-    "@dietrichgebert/ponytail@4.8.3",
-    "@mohak34/opencode-notifier@v0.2.8"
-    // "opencode-claude-auth@latest"
+  "plugins": [
+    "@ex-machina/opencode-anthropic-auth@2.0.0-next.6",
+    "@dietrichgebert/ponytail@5.3.2"
   ],
-  "permission": {
-    "*": "ask",
-    "glob": "allow",
-    "grep": "allow",
-    "rg": "allow",
-    "read": "allow",
-    "todowrite": "allow",
-    "ls": "allow",
-    "head": "allow",
-    "find": "allow",
-    "echo": "allow",
-    "wc": "allow",
-    "cat": "allow",
-    "context7*": "allow",
-    "snoop-doc*": "allow",
-    "jetbrains_read*": "allow",
-    "jetbrains_search*": "allow"
-  },
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "context7_*", "resource": "*", "effect": "allow" },
+    { "action": "snoop_doc_*", "resource": "*", "effect": "allow" },
+    { "action": "jetbrains_read*", "resource": "*", "effect": "allow" },
+    { "action": "jetbrains_search*", "resource": "*", "effect": "allow" }
+  ],
   "provider": {
     "lm-studio-local": {
       "npm": "@ai-sdk/openai-compatible",
