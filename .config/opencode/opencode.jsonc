@@ -34,11 +34,13 @@
       },
       "snoop-doc": {
         "type": "remote",
-        "url": "{env:SNOOP_DOC_MCP_URL}"
+        "url": "{env:SNOOP_DOC_MCP_URL}",
+        "disabled": true
       },
       "jetbrains": {
         "type": "remote",
-        "url": "http://127.0.0.1:64342/sse"
+        "url": "http://127.0.0.1:64342/sse",
+        "disabled": true
       },
       "atlassian": {
         "type": "remote",
