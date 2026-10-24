@@ -11,5 +11,8 @@
     "scrollbar": false,
     "thinking": "show"
   },
-  "animations": true
+  "animations": true,
+  "theme": {
+    "name": "catppuccin-frappe"
+  }
 }
